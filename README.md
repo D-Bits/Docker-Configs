@@ -9,3 +9,6 @@ This repo consists (or will consist) of configurations for the follow types of d
 * LAMP
 * ASP.NET Core and SQL Sever for Linux
 * Django and PostgreSQL
+* MySQL and PostgreSQL standalone instances
+
+**Note:** *environment variables used in the docker-compose files are stored in .env files, which are not commited for obvious reasons.*

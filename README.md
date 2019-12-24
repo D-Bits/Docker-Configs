@@ -4,7 +4,7 @@ A collection of different development environments, configured with Docker and D
 
 ## Environments
 
-This repo consists of configurations for the follow types of development environments:
+This repo consists (or will consist) of configurations for the follow types of development environments:
 
 * LAMP
 * ASP.NET Core and SQL Sever for Linux

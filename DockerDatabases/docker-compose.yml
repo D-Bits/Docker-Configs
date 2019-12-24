@@ -1,0 +1,20 @@
+version: '3'
+
+# A setup for bootstraping more than one different SQL db server instance
+services: 
+
+    mysql:
+        image: mysql:8.0.18
+        environment: 
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+        ports: "3306:3306"
+        volumes:
+            - ${MYSQL_LOCAL_DATA}:/var/lib/mysql
+    postgres:
+        image: postgres:12.1-alpine
+        environment: 
+            POSTGRES_PASSWORD:
+                
+        volumes: 
+            - ./pgdata:/var/lib/postgresql/data

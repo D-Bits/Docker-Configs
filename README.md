@@ -7,7 +7,7 @@ A collection of different development environments, configured with Docker and D
 This repo consists (or will consist) of configurations for the follow types of development environments:
 
 * LAMP
-* ASP.NET Core and SQL Sever for Linux
+* ASP.NET Core and PostgreSQL for Linux
 * Django and PostgreSQL
 * MySQL and PostgreSQL standalone instances
 

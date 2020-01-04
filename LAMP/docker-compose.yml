@@ -8,19 +8,17 @@ services:
         volumes:
             - ./MyProject:/var/www/html
 
-    mysql:
-        image: mysql:latest
+    mariadb:
+        image: mariadb:10.2
         volumes:
-            - C:\Users\Dana\Documents\Dev\mysql_data:/var/lib/mysql
+            - ${MARIADB_VOLUME}:/var/lib/mysql
         ports:
             - "3306:3306"
         environment:
             TZ: "America/Vancouver"
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-            MYSQL_ROOT_PASSWORD: "rootpwd"
-            MYSQL_USER: 'testuser'
-            MYSQL_PASSWORD: 'testpassword'
-            MYSQL_DATABASE: 'testdb'
+            MYSQL_ROOT_PASSWORD: {MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
 
 volumes:
-    mysql:
+    mariadb:

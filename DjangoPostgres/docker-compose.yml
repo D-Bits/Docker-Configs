@@ -28,7 +28,9 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
     volumes: 
-      - "${PG_LOCAL_DATA}:${PG_DOCKER_DATA}"
+      - pgdata:/var/lib/postgresql/data
 
 volumes: 
-    db:
+    pgdata:
+      external:
+        name: pgdata

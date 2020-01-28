@@ -11,7 +11,7 @@ services:
         ports: 
             - "3306:3306"
         volumes:
-            - ${MYSQL_LOCAL_DATA}:/var/lib/mysql/
+            - mariadb:/var/lib/mysql/
     postgres:
         image: postgres:12.1-alpine
         environment: 

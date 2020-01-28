@@ -3,15 +3,15 @@ version: '3'
 # A setup for bootstraping more than one different SQL db server instances
 services: 
 
-    mysql:
-        image: mysql:8.0.18
+    mariadb:
+        image: mariadb:10.2
         environment: 
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}
         ports: 
             - "3306:3306"
         volumes:
-            - ${MYSQL_LOCAL_DATA}:/var/lib/mysql
+            - ${MYSQL_LOCAL_DATA}:/var/lib/mysql/
     postgres:
         image: postgres:12.1-alpine
         environment: 
@@ -21,9 +21,9 @@ services:
         ports: 
             - "54321:5432"    
         volumes: 
-            - ${PG_LOCAL_DATA}:/var/lib/postgresql/data
+            - pgdata:/var/lib/postgresql/data/
 
 volumes: 
-    mysql:
+    mariadb:
     pgdata:
     
